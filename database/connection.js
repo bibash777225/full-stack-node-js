@@ -1,7 +1,7 @@
 // hami yeha chai database connection ko code or logic lekhxam 
- const{ Sequelize, DataType} =require("sequelize")
+ const{ Sequelize, DataType, DataTypes} =require("sequelize")
  
-
+// const bookModel=require("./models/book.model.js")(sequelize,DataTypes)     you gardha pani avyou
 
 //  const require=  require('sequelize')
 //  const Seqelize= require.Sequelize
@@ -19,7 +19,16 @@ sequelize.authenticate()
 
 })  
 const db ={}
-    db.Sequelize = Sequelize;
-    db.sequelize = sequelize;  
-    // class mahh j xa tei same ,ae halney  obj mah j xa tei name hald name convention hunca vaney kura
-     module.exports= db;
+    db.Sequelize = Sequelize
+    db.sequelize = sequelize  
+
+    db.Books= require("../models/book.model.js")(sequelize,DataTypes)
+   
+//    migrate ko code ho u chai
+   sequelize.sync({ alter:false})
+   .then(()=>{
+    console.log("migrate vayou hai taw")
+   })
+ // class mahh j xa tei same ,same halney  obj mah j xa tei name hald name convention hunxa vaney kura
+
+     module.exports= db

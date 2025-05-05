@@ -1,5 +1,8 @@
 const express = require("express") // express reqire
+const { Books } = require("./database/connection.js")
 const app = express() // express lai trigger gareko
+
+app.use(express.json)
 // let app=require("express")()
  require("./database/connection.js")
 
@@ -28,10 +31,16 @@ const app = express() // express lai trigger gareko
 //  })
 
 // });
-app.get("/books",function(req,res){
+app.get("/books", async function(req,res){
   // logic to fetch  bookd from database
+    const datas=  await Books.findAll()  
+    // select*frombooks; querry mah u garxam tara hami lai sequelize ley u method deko xa
+              
+
   res.json({
-    massage:"books fetched succesfully"
+    massage:"books fetched succesfully",
+    //  hamii datas mah gayera yeuta datas vaney vado mah lagera save garya xumm ani jahiley pani key rah value name same xa vaney yeuta lekhdha hunxa
+      datas
 
   })
 })
