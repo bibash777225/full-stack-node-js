@@ -3,7 +3,7 @@ const { Books } = require("./database/connection.js")
 const { DataTypes } = require("sequelize")
 const app = express() // express lai trigger gareko
 
-app.use(express.json)
+app.use(express.json())
 // let app=require("express")()
  require("./database/connection.js")
 
@@ -79,7 +79,7 @@ app.patch("/books/:id", function(req,res){
 // supabase.com :6543/postgres
 
 app.listen(4000 ,()=>{
-    console.log( " projec/server/backned/has started at port 4000")
+    console.log( " project/server/backned/has started at port 4000")
 
 })
 

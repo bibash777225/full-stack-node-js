@@ -10,7 +10,7 @@ const bookModel= (sequelize,DataTypes)=>{
             type:DataTypes.STRING,
             // allowNull :false
         },
-
+        
         bookPrice:{
             type:DataTypes.INTEGER,
             // allowNull :false
