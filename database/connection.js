@@ -10,7 +10,7 @@
 //   Capital S vako class hoo ani arko object create garya ho instance of classs
 
 sequelize.authenticate()
-.then(()=>{
+.then(()=>{``
     console.log(" authetication connectes success")
 
 })
