@@ -1,5 +1,6 @@
 const express = require("express") // express reqire
 const { Books } = require("./database/connection.js")
+const { DataTypes } = require("sequelize")
 const app = express() // express lai trigger gareko
 
 app.use(express.json)
@@ -40,12 +41,22 @@ app.get("/books", async function(req,res){
   res.json({
     massage:"books fetched succesfully",
     //  hamii datas mah gayera yeuta datas vaney vado mah lagera save garya xumm ani jahiley pani key rah value name same xa vaney yeuta lekhdha hunxa
-      datas
+      datas : datas
 
   })
 })
-app.post("/books", function(req,res){
+app.post("/books", async function(req,res){
   // LOGIC TO ADD BOOK 
+
+  const {bookName, bookPrice, bookAuther} = req.body;
+
+  await Books.create({
+
+      bookNames : bookName, //cloumn:value
+      bookPrice : bookPrice,
+      bookAuther : bookAuther
+  })
+
 res.json({
   massage:" books added sucessfully"
 })
