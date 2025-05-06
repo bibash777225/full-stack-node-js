@@ -10,7 +10,7 @@
 //   Capital S vako class hoo ani arko object create garya ho instance of classs
 
 sequelize.authenticate()
-.then(()=>{``
+.then(()=>{
     console.log(" authetication connectes success")
 
 })
@@ -25,7 +25,7 @@ const db ={}
     db.Books= require("../models/book.model.js")(sequelize,DataTypes)
    
 //    migrate ko code ho u chai
-   sequelize.sync({ alter:false})
+   sequelize.sync({ alter:true})
    .then(()=>{
     console.log("migrate vayou hai taw")
    }).catch((error)=>{

@@ -6,21 +6,21 @@
 const bookModel= (sequelize,DataTypes)=>{
     //  database mah kei kura singular amh lekhya xa vaney teslai pular jastai book ko books
      const Book =sequelize.define("book", {
-        bookNames:{
+        bookName:{
             type:DataTypes.STRING,
-            // allowNull :false
+            allowNull :false
         },
         
         bookPrice:{
             type:DataTypes.INTEGER,
-            // allowNull :false
+            allowNull :false
         },
 
-        bookAuther:{
+        bookAuthor:{
             type:DataTypes.STRING
         },
 
-        bookGenra:{
+        bookGenre:{
             type:DataTypes.STRING,
         },
         
