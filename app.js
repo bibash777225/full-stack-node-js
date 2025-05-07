@@ -2,13 +2,14 @@ const express = require("express") // express reqire
  const bookRoute= require("./routes/bookRoute.js")
 
 const app = express() // express lai trigger gareko
+require("./database/connection.js")
 
 app.use(express.json())
 
-require("./database/connection.js")
 
 
-app.use("/api",bookRoute)  // localhost:4000/api +/books=localhost:4000/api/books
+
+app.use("/api/Books",bookRoute)  // localhost:4000/api +/books=localhost:4000/api/books
                        // localhost:4000/api +/books/:id=localhost:4000/api/books/:id
 
 
