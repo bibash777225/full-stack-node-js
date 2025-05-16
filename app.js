@@ -1,14 +1,14 @@
 const express = require("express") // express reqire
  const bookRoute= require("./routes/bookRoute.js")
-
+  const cors= require("cors")
 const app = express() // express lai trigger gareko
 require("./database/connection.js")
 
 app.use(express.json())
 
-
-
-
+  app.use(cors({
+    origin:"*"    // josley oani chlauna paiypu josley hit handa panii hunxa origin:"*"
+  }))
 app.use("/api/Books",bookRoute)  // localhost:4000/api +/books=localhost:4000/api/books
                        // localhost:4000/api +/books/:id=localhost:4000/api/books/:id
 
