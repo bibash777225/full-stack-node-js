@@ -1,5 +1,5 @@
 
-const { where } = require("sequelize");
+
 const {Books} = require("../database/connection");
 
 exports.fetchBooks=async function(req,res){
@@ -25,7 +25,7 @@ exports.addBook= async function(req,res){
  await Books.create({
     bookName,   
     // colume:value
-    bookPrice,
+    bookPrice, 
     bookAuthor,
     bookGenre
     //  databasae querry gardha sadhai ekxin time lagxa so await and async halnu 

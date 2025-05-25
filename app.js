@@ -12,7 +12,7 @@ require("./database/connection.js")
   
 app.use(express.json())
 
-app.use("/api/Books",bookRoute)  // localhost:4000/api +/books=localhost:4000/api/books
+app.use("/api/books",bookRoute)  // localhost:4000/api +/books=localhost:4000/api/books
                        // localhost:4000/api +/books/:id=localhost:4000/api/books/:id
 
 
